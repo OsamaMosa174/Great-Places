@@ -4,7 +4,6 @@ import 'package:path/path.dart' as path;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-// ignore: camel_case_types
 class ImageInputWidget extends StatefulWidget {
   final Function onselectImage;
 
@@ -14,7 +13,6 @@ class ImageInputWidget extends StatefulWidget {
   State<ImageInputWidget> createState() => _ImageInputWidgetState();
 }
 
-// ignore: camel_case_types
 class _ImageInputWidgetState extends State<ImageInputWidget> {
   File? _storedImage;
 
@@ -23,7 +21,7 @@ class _ImageInputWidgetState extends State<ImageInputWidget> {
         .pickImage(source: ImageSource.camera, maxWidth: 600);
 
     if (imageFile == null) {
-      return; // if the user cancels image picking, exit the method
+      return;
     }
     final File imageAsFile = File(imageFile.path);
     setState(() {
@@ -61,7 +59,7 @@ class _ImageInputWidgetState extends State<ImageInputWidget> {
         ),
         Expanded(
           child: TextButton.icon(
-            onPressed: _takePicture, // call _takePicture when pressed
+            onPressed: _takePicture,
             label: Text(
               'Take Picture',
               style: TextStyle(color: Theme.of(context).primaryColor),

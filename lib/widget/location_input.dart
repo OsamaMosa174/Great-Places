@@ -12,7 +12,7 @@ class LocationInput extends StatefulWidget {
 class _LocationInputState extends State<LocationInput> {
   String? _previewImageUrl;
   Future<void> _getcurrentuserlocation() async {
-  final locdate=await  Location().getLocation();
+    final locdate = await Location().getLocation();
   }
 
   @override
@@ -37,7 +37,7 @@ class _LocationInputState extends State<LocationInput> {
                   width: double.infinity,
                 ),
         ),
-        Row(
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextButton.icon(
@@ -50,7 +50,7 @@ class _LocationInputState extends State<LocationInput> {
                   color: Theme.of(context).primaryColor,
                 ),
               ),
-              onPressed:_getcurrentuserlocation,
+              onPressed: _getcurrentuserlocation,
             ),
             TextButton.icon(
               icon: const Icon(
